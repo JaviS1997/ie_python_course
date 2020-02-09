@@ -50,7 +50,25 @@ def maze():
     return print("Congrats! You finished the maze")
 
 
+def substr():
+    print('Input the word whose substring we will use :')
+    word = input()
+    prior = word[0]
+    substring = ''
+    longest_substring = ''
+    for c in word:
+        if c >= prior:
+            substring += c
+        else:
+            if len(substring) >= len(longest_substring):
+                longest_substring = substring
+            substring = '' + c
+        prior = c
+    print('The longest alphabetical substring is \'{}\''.format(longest_substring))
+
+
 # askName()
 # division()
 # surfaceCircle()
-maze()
+# maze()
+substr()
